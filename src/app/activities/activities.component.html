@@ -1,0 +1,112 @@
+<section class="booking-hero">
+  <div class="container">
+    <div class="booking-hero-content">
+      <p class="booking-breadcrumb">Zaya Surf Morocco &nbsp;•&nbsp; Activities</p>
+      <h1>Extra Activities</h1>
+      <p class="booking-hero-description">Explore the region’s nature, culture, and playful surf-inspired adventures.</p>
+    </div>
+  </div>
+</section>
+
+<section id="activities" class="section-spacing section-sand">
+  <div class="container">
+    <div class="activity-panels">
+      <details class="activity-panel" open (toggle)="onActivityToggle($event)">
+        <summary>
+          <span>🌿 Paradise Valley – Hiking Trip</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </summary>
+        <div class="activity-panel-body">
+          <img
+            src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=900&q=80"
+            alt="Paradise Valley"
+          >
+          <div>
+            <span class="activity-price">€35 / person</span>
+            <p>
+              A lush escape of palm-lined valleys, natural pools, and scenic hikes. We plan a full-day
+              outing with shaded rest stops, fresh local snacks, and time to swim in crystal-clear water.
+            </p>
+            <div class="activity-meta">
+              <span><i class="fa-regular fa-clock"></i> Full day</span>
+              <span><i class="fa-solid fa-water"></i> Nature swim</span>
+              <span><i class="fa-solid fa-car"></i> 45 min drive</span>
+            </div>
+          </div>
+        </div>
+      </details>
+      <details class="activity-panel" (toggle)="onActivityToggle($event)">
+        <summary>
+          <span>🏜️ Sand Dunes Surfing (Sandboarding)</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </summary>
+        <div class="activity-panel-body">
+          <img
+            src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80"
+            alt="Sand dunes"
+          >
+          <div>
+            <span class="activity-price">€30 / person</span>
+            <p>
+              Ride golden dunes at sunset with boards ready for all levels. Expect epic photo moments,
+              chill tea breaks, and soft sand runs back to the top.
+            </p>
+            <div class="activity-meta">
+              <span><i class="fa-regular fa-sun"></i> Sunset session</span>
+              <span><i class="fa-solid fa-mountain-sun"></i> Easy level</span>
+              <span><i class="fa-solid fa-camera"></i> Photo stop</span>
+            </div>
+          </div>
+        </div>
+      </details>
+      <details class="activity-panel" (toggle)="onActivityToggle($event)">
+        <summary>
+          <span>🛍️ Local Souk Visit</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </summary>
+        <div class="activity-panel-body">
+          <img
+            src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80"
+            alt="Local souk"
+          >
+          <div>
+            <span class="activity-price">€20 / person</span>
+            <p>
+              Wander through lively markets filled with spices, ceramics, and textiles. We guide you
+              through local favorites and help you find the best artisan spots.
+            </p>
+            <div class="activity-meta">
+              <span><i class="fa-solid fa-people-group"></i> Cultural walk</span>
+              <span><i class="fa-solid fa-bag-shopping"></i> Artisan shops</span>
+              <span><i class="fa-solid fa-mug-hot"></i> Tea stop</span>
+            </div>
+          </div>
+        </div>
+      </details>
+      <details class="activity-panel" (toggle)="onActivityToggle($event)">
+        <summary>
+          <span>🛹 Surf Skating</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </summary>
+        <div class="activity-panel-body">
+          <img
+            src="https://images.unsplash.com/photo-1482192596544-9eb780fc7f66?auto=format&fit=crop&w=900&q=80"
+            alt="Surf skating"
+          >
+          <div>
+            <span class="activity-price">€25 / session</span>
+            <p>
+              Build flow and balance on surf skates with coaching in Taghazout’s skatepark. We focus on
+              smooth turns, carving drills, and confidence for the water.
+            </p>
+            <div class="activity-meta">
+              <span><i class="fa-solid fa-route"></i> Skills clinic</span>
+              <span><i class="fa-solid fa-person-snowboarding"></i> Boards provided</span>
+              <span><i class="fa-regular fa-clock"></i> 1.5 hours</span>
+            </div>
+          </div>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
