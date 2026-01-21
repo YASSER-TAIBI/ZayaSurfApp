@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiBaseUrl: 'https://YOUR_BACKEND_DOMAIN'
+  apiBaseUrl: 'https://zaya-surf-backend.onrender.com'
 };
