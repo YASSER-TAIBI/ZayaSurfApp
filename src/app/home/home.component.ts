@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, HostListener, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { environment } from '../../environments/environment';
 
 interface GoogleReview {
   author_name: string;
@@ -101,7 +102,7 @@ export class HomeComponent implements OnInit {
   }
 
   private loadReviews(): void {
-    this.http.get<GoogleReviewsResponse>('http://localhost:5050/api/reviews').subscribe({
+    this.http.get<GoogleReviewsResponse>(`${environment.apiBaseUrl}/api/reviews`).subscribe({
       next: (response) => {
         const cleaned: GoogleReview[] = (response.reviews ?? [])
           .filter((review) => review.text?.trim())

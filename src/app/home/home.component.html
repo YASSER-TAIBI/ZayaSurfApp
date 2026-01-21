@@ -66,7 +66,7 @@
               src="https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?auto=format&fit=crop&w=800&q=80"
               alt="Other surf experiences"
             >
-            <div class="package-overlay" >
+            <div class="package-overlay" routerLink="/other-surf-experiences">
               <span class="package-badge">Wellness</span>
               <h3>Other Surf Experiences</h3>
               <p>Yoga, excursions, and soulful days immersed in Moroccan culture.</p>
@@ -202,46 +202,60 @@
         <p>Amenities curated for surf trips, workation comfort, and community dinners.</p>
       </div>
       <div class="row text-center g-4">
-        <div class="col-6 col-md-4">
+        <div class="col-6 col-md-3">
           <div class="icon-card">
             <i class="fa-solid fa-wifi"></i>
             <h4>Fast Wi-Fi</h4>
             <p>Stream, work, and stay connected with ease.</p>
           </div>
         </div>
-        <div class="col-6 col-md-4">
+        <div class="col-6 col-md-3">
           <div class="icon-card">
             <i class="fa-solid fa-people-group"></i>
             <h4>Family Atmosphere</h4>
             <p>Warm, social evenings and shared surf stories.</p>
           </div>
         </div>
-        <div class="col-6 col-md-4">
+        <div class="col-6 col-md-3">
           <div class="icon-card">
             <i class="fa-solid fa-bowl-food"></i>
             <h4>Fresh Meals</h4>
             <p>Local flavors, healthy bowls, and slow dinners.</p>
           </div>
         </div>
-        <div class="col-6 col-md-4">
+        <div class="col-6 col-md-3">
           <div class="icon-card">
             <i class="fa-solid fa-person-walking"></i>
             <h4>Market to Beach Walk</h4>
             <p>Everything is a stroll away from the house.</p>
           </div>
         </div>
-        <div class="col-6 col-md-4">
+        <div class="col-6 col-md-3">
           <div class="icon-card">
             <i class="fa-solid fa-water"></i>
             <h4>Free Surf</h4>
             <p>Boards ready for mellow sessions anytime.</p>
           </div>
         </div>
-        <div class="col-6 col-md-4">
+        <div class="col-6 col-md-3">
           <div class="icon-card">
             <i class="fa-solid fa-umbrella-beach"></i>
             <h4>Ocean View</h4>
             <p>Golden light and Atlantic horizons daily.</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="icon-card">
+            <i class="fa-solid fa-tv"></i>
+            <h4>Video Projecteur</h4>
+            <p>Watch your favorite movies and shows in style.</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="icon-card">
+            <i class="fa-solid fa-chess-board"></i>
+            <h4>Board Games</h4>
+            <p>Enjoy a game of chess with fellow guests.</p>
           </div>
         </div>
       </div>
@@ -258,7 +272,7 @@
       <div class="activity-panels">
         <details class="activity-panel" open (toggle)="onActivityToggle($event)">
           <summary>
-            <span>🌿 Paradise Valley – Hiking Trip</span>
+            <span>Paradise Valley – Hiking Trip</span>
             <i class="fa-solid fa-chevron-down"></i>
           </summary>
           <div class="activity-panel-body">
@@ -267,7 +281,6 @@
               alt="Paradise Valley"
             >
             <div>
-              <span class="activity-price">€35 / person</span>
               <p>
                 A lush escape of palm-lined valleys, natural pools, and scenic hikes. We plan a full-day
                 outing with shaded rest stops, fresh local snacks, and time to swim in crystal-clear water.
@@ -282,7 +295,7 @@
         </details>
         <details class="activity-panel" (toggle)="onActivityToggle($event)">
           <summary>
-            <span>🏜️ Sand Dunes Surfing (Sandboarding)</span>
+            <span>Sand Dunes Surfing (Sandboarding)</span>
             <i class="fa-solid fa-chevron-down"></i>
           </summary>
           <div class="activity-panel-body">
@@ -291,7 +304,6 @@
               alt="Sand dunes"
             >
             <div>
-              <span class="activity-price">€30 / person</span>
               <p>
                 Ride golden dunes at sunset with boards ready for all levels. Expect epic photo moments,
                 chill tea breaks, and soft sand runs back to the top.
@@ -306,7 +318,7 @@
         </details>
         <details class="activity-panel" (toggle)="onActivityToggle($event)">
           <summary>
-            <span>🛍️ Local Souk Visit</span>
+            <span>Local Souk Visit</span>
             <i class="fa-solid fa-chevron-down"></i>
           </summary>
           <div class="activity-panel-body">
@@ -315,7 +327,6 @@
               alt="Local souk"
             >
             <div>
-              <span class="activity-price">€20 / person</span>
               <p>
                 Wander through lively markets filled with spices, ceramics, and textiles. We guide you
                 through local favorites and help you find the best artisan spots.
@@ -330,7 +341,7 @@
         </details>
         <details class="activity-panel" (toggle)="onActivityToggle($event)">
           <summary>
-            <span>🛹 Surf Skating</span>
+            <span>Surf Skating</span>
             <i class="fa-solid fa-chevron-down"></i>
           </summary>
           <div class="activity-panel-body">
@@ -339,7 +350,6 @@
               alt="Surf skating"
             >
             <div>
-              <span class="activity-price">€25 / session</span>
               <p>
                 Build flow and balance on surf skates with coaching in Taghazout’s skatepark. We focus on
                 smooth turns, carving drills, and confidence for the water.

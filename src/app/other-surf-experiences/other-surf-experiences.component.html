@@ -1,0 +1,79 @@
+<section class="booking-hero">
+  <div class="container">
+    <div class="booking-hero-content">
+      <p class="booking-breadcrumb">Zaya Surf Morocco &nbsp;•&nbsp; Other Surf Experiences</p>
+      <h1>Other Surf Experiences</h1>
+      <p class="booking-hero-description">
+        Slow mornings, soulful excursions, and wellness-focused days paired with the Zaya Surf House vibe.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="package-detail-section">
+  <div class="container">
+    <div class="guiding-grid">
+      <div class="guiding-left">
+        <div class="guiding-photo reveal-on-load">
+          <img
+            src="https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?auto=format&fit=crop&w=1200&q=80"
+            alt="Other surf experiences"
+          >
+        </div>
+        <blockquote class="guiding-quote reveal-on-load">
+          “Wellness, culture, and the ocean breeze — the slow days you will remember.”
+          <span>- Zaya Surf Morocco -</span>
+        </blockquote>
+        <div class="guiding-overview reveal-on-load">
+          <h3>Overview</h3>
+          <p>
+            Other Surf Experiences are perfect for guests who want a flexible stay focused on rest, wellness,
+            and discovering Morocco at their own pace.
+          </p>
+          <p>
+            Choose how many nights you want to stay. The price updates automatically based on your selection.
+          </p>
+        </div>
+        <div class="guiding-card reveal-on-load">
+          <h3>Typical Day</h3>
+          <p class="guiding-card-note">
+            The rhythm stays relaxed with space for yoga, excursions, and beach time.
+          </p>
+          <ul class="guiding-timeline">
+            <li><span>07:30</span> Breakfast at the surf house</li>
+            <li><span>09:00</span> Morning beach walk + stretch</li>
+            <li><span>11:00</span> Excursion or wellness session</li>
+            <li><span>13:00</span> Lunch break + chill</li>
+            <li><span>16:00</span> Free time in Taghazout</li>
+            <li><span>19:30</span> Moroccan dinner with the group</li>
+          </ul>
+        </div>
+      </div>
+      <div class="guiding-right">
+        <div class="guiding-card reveal-on-load">
+          <h3>What’s Included</h3>
+          <ul class="guiding-list">
+            <li>Accommodation at Zaya Surf House</li>
+            <li>Daily breakfast</li>
+            <li>Homemade Moroccan dinners</li>
+            <li>Access to the shared kitchen</li>
+            <li>Free Wi-Fi throughout the surf house</li>
+            <li>Fresh bath towels provided</li>
+          </ul>
+        </div>
+        <div class="guiding-card guiding-card--accent reveal-on-load">
+          <h3>Package Price</h3>
+          <div class="pricing-control">
+            <label for="nights">Number of nights :</label>
+            <input id="nights" type="number" min="1" [(ngModel)]="nights">
+          </div>
+          <ul class="guiding-list">
+            <li>Total for <strong>{{ nights || 0 }}</strong> nights</li>
+            <li>From <strong>{{ totalPrice | number: '1.2-2' }}</strong> €</li>
+          </ul>
+          <a class="btn btn-primary" routerLink="/booking">Book This Package</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

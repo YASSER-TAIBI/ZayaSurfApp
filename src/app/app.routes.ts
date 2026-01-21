@@ -9,6 +9,7 @@ import { ContactComponent } from './contact/contact.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { SurfGuidingComponent } from './surf-guiding/surf-guiding.component';
 import { SurfLessonsComponent } from './surf-lessons/surf-lessons.component';
+import { OtherSurfExperiencesComponent } from './other-surf-experiences/other-surf-experiences.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -20,5 +21,6 @@ export const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'privacy-policy', component: PrivacyPolicyComponent },
   { path: 'surf-lessons', component: SurfLessonsComponent },
-  { path: 'surf-guiding', component: SurfGuidingComponent }
+  { path: 'surf-guiding', component: SurfGuidingComponent },
+  { path: 'other-surf-experiences', component: OtherSurfExperiencesComponent }
 ];
