@@ -10,6 +10,10 @@ import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.componen
 import { SurfGuidingComponent } from './surf-guiding/surf-guiding.component';
 import { SurfLessonsComponent } from './surf-lessons/surf-lessons.component';
 import { OtherSurfExperiencesComponent } from './other-surf-experiences/other-surf-experiences.component';
+import { TheMoonRoomComponent } from './the-moon-room/the-moon-room.component';
+import { TheCaveRoomComponent } from './the-cave-room/the-cave-room.component';
+import { OffshoreRoomComponent } from './offshore-room/offshore-room.component';
+import { OnshoreRoomComponent } from './onshore-room/onshore-room.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -17,10 +21,14 @@ export const routes: Routes = [
   { path: 'packages', component: PackagesComponent },
   { path: 'house', component: HouseComponent },
   { path: 'rooms', component: RoomsComponent },
+  { path: 'rooms/the-moon', component: TheMoonRoomComponent },
+  { path: 'rooms/the-cave', component: TheCaveRoomComponent },
+  { path: 'rooms/offshore', component: OffshoreRoomComponent },
+  { path: 'rooms/onshore', component: OnshoreRoomComponent },
   { path: 'activities', component: ActivitiesComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'privacy-policy', component: PrivacyPolicyComponent },
-  { path: 'surf-lessons', component: SurfLessonsComponent },
-  { path: 'surf-guiding', component: SurfGuidingComponent },
-  { path: 'other-surf-experiences', component: OtherSurfExperiencesComponent }
+  { path: 'packages/surf-lessons', component: SurfLessonsComponent },
+  { path: 'packages/surf-guiding', component: SurfGuidingComponent },
+  { path: 'packages/other-surf-experiences', component: OtherSurfExperiencesComponent }
 ];

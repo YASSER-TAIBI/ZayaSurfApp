@@ -38,6 +38,7 @@
           },
           "configurations": {
             "production": {
+              "baseHref": "/ZayaSurfApp/",
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
@@ -101,6 +102,9 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }

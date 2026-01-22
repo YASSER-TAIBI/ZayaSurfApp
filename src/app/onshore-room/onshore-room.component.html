@@ -1,0 +1,116 @@
+<section class="booking-hero">
+  <div class="container">
+    <div class="booking-hero-content">
+      <p class="booking-breadcrumb">Zaya Surf Morocco &nbsp;•&nbsp; Rooms</p>
+      <h1>Onshore</h1>
+      <p class="booking-hero-description">
+        Fresh and botanical tones with storage space and a peaceful shared bathroom.
+      </p>
+    </div>
+  </div>
+</section>
+
+<div class="room-modal" *ngIf="modalOpen" (click)="closeModal()">
+  <div class="room-modal-content" (click)="$event.stopPropagation()">
+    <button class="room-modal-close" type="button" (click)="closeModal()">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <button class="room-modal-nav prev" type="button" (click)="prevPhoto()">
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
+    <img
+      class="room-modal-image"
+      [src]="photos[activeIndex].src"
+      [alt]="photos[activeIndex].alt"
+    >
+    <button class="room-modal-nav next" type="button" (click)="nextPhoto()">
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>
+    <p class="room-modal-counter">{{ activeIndex + 1 }} / {{ photos.length }}</p>
+  </div>
+</div>
+
+<section class="section-spacing room-detail">
+  <div class="container">
+    <div class="room-detail-layout">
+      <div class="room-detail-gallery">
+        <div class="room-gallery">
+          <figure class="room-gallery-main" (click)="openModal(0)">
+            <img [src]="photos[0].src" [alt]="photos[0].alt">
+          </figure>
+          <div class="room-gallery-stack">
+            <figure (click)="openModal(1)">
+              <img [src]="photos[1].src" [alt]="photos[1].alt">
+            </figure>
+            <figure (click)="openModal(2)">
+              <img [src]="photos[2].src" [alt]="photos[2].alt">
+            </figure>
+          </div>
+        </div>
+        <div class="room-gallery-thumbs">
+          <button
+            class="room-thumb"
+            type="button"
+            *ngFor="let photo of photos.slice(3, 6); let i = index"
+            (click)="openModal(i + 3)"
+          >
+            <img [src]="photo.src" [alt]="photo.alt">
+          </button>
+          <button class="room-gallery-more" type="button" (click)="openModal(0)">
+            <img [src]="photos[0].src" [alt]="photos[0].alt">
+            <span>{{ photos.length }} photos</span>
+          </button>
+        </div>
+        <div class="room-detail-card">
+          <h3>Room details</h3>
+          <ul>
+            <li>Single bed</li>
+            <li>Quiet desk space</li>
+            <li>Shared bathroom (2 rooms)</li>
+            <li>Fresh towels included</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="room-detail-content">
+        <div class="room-detail-text">
+          <h2>Onshore — botanical calm with soft light</h2>
+          <p>
+            Onshore blends gentle botanical tones with clean lines and a calm, airy atmosphere. It’s ideal for solo
+            travelers who want a peaceful space to reset between surf sessions.
+          </p>
+          <p>
+            The shared bathroom is kept quiet and pristine, and the room provides flexible storage for boards, bags,
+            and everyday essentials.
+          </p>
+        </div>
+        <div class="room-info-grid">
+          <div class="room-info-item">
+            <span class="room-info-label">Surface</span>
+            <strong>16 m²</strong>
+          </div>
+          <div class="room-info-item">
+            <span class="room-info-label">Capacity</span>
+            <strong>1 guest</strong>
+          </div>
+          <div class="room-info-item">
+            <span class="room-info-label">Check‑in</span>
+            <strong>14:00</strong>
+          </div>
+          <div class="room-info-item">
+            <span class="room-info-label">Check‑out</span>
+            <strong>11:00</strong>
+          </div>
+        </div>
+        <div class="room-info-title-services">
+          <div class="room-info-item">
+            <span class="room-info-label">Services</span>
+            <strong>Wi‑Fi, towels, storage, cleaning</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
