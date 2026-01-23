@@ -1,0 +1,50 @@
+<section class="booking-hero">
+  <div class="container">
+    <div class="booking-hero-content">
+      <p class="booking-breadcrumb">Zaya Surf Morocco &nbsp;•&nbsp; FAQ</p>
+      <h1>FAQ</h1>
+      <p class="booking-hero-description">Frequently asked questions about our services and experiences.</p>
+    </div>
+  </div>
+</section>
+
+  <section class="faq-tabs">
+    <div class="container">
+      <div class="faq-tabs-row">
+        <button
+          type="button"
+          class="faq-tab"
+          *ngFor="let tab of tabs"
+          [class.active]="tab.id === activeTab"
+          (click)="selectTab(tab.id)"
+        >
+          {{ tab.label }}
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-content">
+    <div class="container">
+      <div class="faq-title">
+        <h2>{{ activeTabLabel }}</h2>
+      </div>
+
+      <div class="faq-grid" *ngIf="activeFaqs.length; else emptyState">
+        <article class="faq-card" *ngFor="let item of activeFaqs">
+          <div class="faq-question">
+            {{ item.question }}
+          </div>
+          <div class="faq-answer">
+            <p>{{ item.answer }}</p>
+            <ul *ngIf="item.bullets?.length">
+              <li *ngFor="let bullet of item.bullets">{{ bullet }}</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+      <ng-template #emptyState>
+        <div class="faq-empty">Content coming soon.</div>
+      </ng-template>
+    </div>
+  </section>

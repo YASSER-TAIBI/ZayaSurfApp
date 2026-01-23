@@ -14,6 +14,7 @@ import { TheMoonRoomComponent } from './the-moon-room/the-moon-room.component';
 import { TheCaveRoomComponent } from './the-cave-room/the-cave-room.component';
 import { OffshoreRoomComponent } from './offshore-room/offshore-room.component';
 import { OnshoreRoomComponent } from './onshore-room/onshore-room.component';
+import { FaqComponent } from './faq/faq.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -28,6 +29,7 @@ export const routes: Routes = [
   { path: 'activities', component: ActivitiesComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'privacy-policy', component: PrivacyPolicyComponent },
+  { path: 'faq', component: FaqComponent },
   { path: 'packages/surf-lessons', component: SurfLessonsComponent },
   { path: 'packages/surf-guiding', component: SurfGuidingComponent },
   { path: 'packages/other-surf-experiences', component: OtherSurfExperiencesComponent }
