@@ -2,7 +2,8 @@
   <div class="container">
     <div class="booking-hero-content">
       <p class="booking-breadcrumb">Zaya Surf Morocco &nbsp;•&nbsp; Booking</p>
-      <h1>Booking - Zaya Surf Morocco</h1>
+      <h1>Booking</h1>
+      <p class="booking-hero-description">Contact us via the booking form and you will receive a specific offer within a very short time.</p>
     </div>
   </div>
 </section>
@@ -35,7 +36,7 @@
     <div class="booking-grid">
       <aside class="booking-intro">
         <div class="booking-intro-icon">
-          <i class="fa-solid fa-sailboat"></i>
+          <img src="assets/img/summer-beach.png" alt="Summer beach">
         </div>
         <h2>Your surfing adventure starts here</h2>
         <p>
@@ -43,7 +44,7 @@
           Of course you can also call us via WhatsApp. We'll be happy to answer your questions.
         </p>
         <div class="booking-note">
-          <strong>Important Note:</strong>
+          <strong><i class="fa-solid fa-circle-info"></i>&nbsp; Important Note:</strong>
           <p>
             You can book your surf trip starting any day of the week, even fully flexible. We respond
             quickly with a tailor-made quote. <a href="#">View terms &amp; conditions</a>.
@@ -51,63 +52,64 @@
         </div>
       </aside>
 
-      <form class="booking-form">
+      <form class="booking-form" (ngSubmit)="submitBooking()" #bookingForm="ngForm">
         <div class="booking-form-row">
           <div class="form-field">
             <label for="firstName">First Name</label>
-            <input id="firstName" type="text" placeholder="First Name">
+            <input id="firstName" type="text" placeholder="First Name" name="firstName" [(ngModel)]="booking.firstName" required>
           </div>
           <div class="form-field">
             <label for="lastName">Last Name</label>
-            <input id="lastName" type="text" placeholder="Last Name">
+            <input id="lastName" type="text" placeholder="Last Name" name="lastName" [(ngModel)]="booking.lastName" required>
           </div>
         </div>
 
         <div class="form-field">
           <label for="email">Email</label>
-          <input id="email" type="email" placeholder="Email Address">
+          <input id="email" type="email" placeholder="Email Address" name="email" [(ngModel)]="booking.email" required>
         </div>
 
         <div class="form-field">
           <label for="phone">Phone Number</label>
-          <input id="phone" type="tel" placeholder="Phone Number">
+          <input id="phone" type="tel" placeholder="Phone Number" name="phone" [(ngModel)]="booking.phone" required>
         </div>
 
         <div class="booking-form-row">
           <div class="form-field">
             <label for="arrival">Date of Arrival</label>
-            <input id="arrival" type="date">
+            <input id="arrival" type="date" name="arrival" [(ngModel)]="booking.arrival" required>
           </div>
           <div class="form-field">
             <label for="departure">Date of Departure</label>
-            <input id="departure" type="date">
+            <input id="departure" type="date" name="departure" [(ngModel)]="booking.departure" required>
           </div>
         </div>
 
         <div class="form-field">
           <label for="package">Your Surfing Package</label>
-          <select id="package">
-            <option>Select</option>
-            <option>Beginner Surf Camp</option>
-            <option>Intermediate Surf Coaching</option>
-            <option>Advanced Surf Guiding</option>
+          <select id="package" name="package" [(ngModel)]="booking.package" required>
+            <option value="" disabled>Select</option>
+            <option>Surf lessons</option>
+            <option>Surf guiding</option>
+            <option>Other surf experiences</option>
           </select>
         </div>
 
         <div class="form-field">
           <label for="accommodation">Accommodation</label>
-          <select id="accommodation">
-            <option>Select</option>
-            <option>Shared Room</option>
-            <option>Private Room</option>
-            <option>Suite Room</option>
+          <select id="accommodation" name="accommodation" [(ngModel)]="booking.accommodation" required>
+            <option value="" disabled>Select</option>
+            <option>The Moon</option>
+            <option>The Cave</option>
+            <option>Offshore</option>
+            <option>Onshore</option>
           </select>
         </div>
 
         <div class="form-field">
           <label for="guests">Number of Guests</label>
-          <select id="guests">
-            <option>Select</option>
+          <select id="guests" name="guests" [(ngModel)]="booking.guests" required>
+            <option value="" disabled>Select</option>
             <option>1 Guest</option>
             <option>2 Guests</option>
             <option>3 Guests</option>
@@ -117,8 +119,8 @@
 
         <div class="form-field">
           <label for="referral">How did you hear about Zaya Surf Morocco?</label>
-          <select id="referral">
-            <option>Select</option>
+          <select id="referral" name="referral" [(ngModel)]="booking.referral">
+            <option value="" disabled>Select</option>
             <option>Instagram</option>
             <option>Google Search</option>
             <option>Friend Referral</option>
@@ -128,8 +130,8 @@
 
         <div class="form-field">
           <label for="diet">Special Diet</label>
-          <select id="diet">
-            <option>Select</option>
+          <select id="diet" name="diet" [(ngModel)]="booking.diet">
+            <option value="" disabled>Select</option>
             <option>None</option>
             <option>Vegetarian</option>
             <option>Vegan</option>
@@ -139,10 +141,14 @@
 
         <div class="form-field">
           <label for="message">Message</label>
-          <textarea id="message" rows="4" placeholder="Message"></textarea>
+          <textarea id="message" rows="4" placeholder="Message" name="message" [(ngModel)]="booking.message"></textarea>
         </div>
 
-        <button class="btn btn-primary" type="submit">Submit</button>
+        <button class="btn btn-primary" type="submit" [disabled]="isSubmitting || bookingForm.invalid">
+          {{ isSubmitting ? 'Sending...' : 'Submit' }}
+        </button>
+        <p class="booking-form-status" *ngIf="submitSuccess">{{ submitSuccess }}</p>
+        <p class="booking-form-status booking-form-status--error" *ngIf="submitError">{{ submitError }}</p>
       </form>
     </div>
   </div>

@@ -1452,6 +1452,7 @@ a {
   grid-template-columns: minmax(240px, 1fr) minmax(320px, 2fr);
   gap: 3rem;
   align-items: start;
+  margin-bottom: 30px;
 }
 
 .booking-intro {
@@ -1462,11 +1463,15 @@ a {
 }
 
 .booking-intro-icon {
-  font-size: 3rem;
-  color: var(--accent);
   margin-bottom: 1.5rem;
   display: flex;
   justify-content: center;
+
+  img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+  }
 }
 
 .booking-intro h2 {
@@ -1481,12 +1486,113 @@ a {
   background: #886f4c;
   color: #ffffff;
   border-radius: 1.2rem;
-  box-shadow: 0 15px 25px rgba(74, 151, 216, 0.4);
 }
 
 .booking-note a {
   color: #ffffff;
   text-decoration: underline;
+}
+
+.booking-note p {
+  margin-bottom: 0;
+}
+
+.contact-info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  background: var(--white);
+  border-radius: 1.8rem;
+  padding: 2rem;
+  box-shadow: 0 20px 40px rgba(31, 26, 20, 0.12);
+}
+
+.contact-form-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form-title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  color: #3a3229;
+
+  i {
+    color: var(--accent);
+  }
+}
+
+.contact-map-section {
+  padding: 0 0 5rem;
+  background: linear-gradient(180deg, #f6e2d2 0%, #f9e8da 100%);
+}
+
+.contact-map-card {
+  border-radius: 1.8rem;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(31, 26, 20, 0.14);
+  background: var(--white);
+}
+
+.contact-map-frame {
+  width: 100%;
+  height: 380px;
+  line-height: 0;
+
+  iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+}
+
+.contact-map-overlay {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 0.8rem 2rem;
+}
+
+.contact-map-pin {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  box-shadow: 0 6px 16px rgba(139, 111, 78, 0.3);
+  flex-shrink: 0;
+}
+
+.contact-map-overlay h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #3a3229;
+  margin-bottom: 0.1rem;
+}
+
+.contact-map-overlay p {
+  color: #6a5f52;
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+}
+
+.contact-map-link {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.75;
+  }
 }
 
 .booking-form {
@@ -1850,6 +1956,10 @@ a {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .contact-info-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .booking-grid {
     grid-template-columns: 1fr;
   }
@@ -1886,6 +1996,10 @@ a {
   }
 
   .booking-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-info-grid {
     grid-template-columns: 1fr;
   }
 

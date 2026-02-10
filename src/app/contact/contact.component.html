@@ -1,1 +1,131 @@
-<p>contact works!</p>
+<section class="booking-hero">
+  <div class="container">
+    <div class="booking-hero-content">
+      <p class="booking-breadcrumb">Zaya Surf Morocco &nbsp;•&nbsp; Contact</p>
+      <h1>Contact Us</h1>
+      <p class="booking-hero-description">We are here to answer all your questions</p>
+    </div>
+  </div>
+</section>
+
+<section class="booking-panel">
+  <div class="container">
+    <div class="contact-info-grid">
+      <article class="booking-info-card">
+        <span class="booking-info-icon"><i class="fa-solid fa-location-dot"></i></span>
+        <h4>Our Address</h4>
+        <p>Ait Soual Street, 80023 Tamraght, Morocco</p>
+      </article>
+      <article class="booking-info-card">
+        <span class="booking-info-icon"><i class="fa-solid fa-mobile-screen-button"></i></span>
+        <h4>Contact</h4>
+        <p>WhatsApp: +212 643 989 173</p>
+        <p>Phone: +212 671 757 453</p>
+      </article>
+      <article class="booking-info-card">
+        <span class="booking-info-icon"><i class="fa-regular fa-envelope"></i></span>
+        <h4>Email</h4>
+        <p>zayasurf&#64;gmail.com</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="booking-form-section">
+  <div class="container">
+    <div class="booking-grid">
+      <aside class="booking-intro">
+        <div class="booking-intro-icon">
+          <img src="assets/img/summer-beach.png" alt="Summer beach">
+        </div>
+        <h2>We'd love to hear from you!</h2>
+        <p>
+          Feel free to check our <a routerLink="/faq">FAQ</a>, there's a good chance you'll find
+          the information you're looking for.
+        </p>
+        <p>
+          You can book your stay with us for any day of the
+          week. Send us an email to check availability.
+        </p>
+        <div class="booking-note">
+          <strong><i class="fa-solid fa-circle-info"></i>&nbsp; Important Note:</strong>
+          <p>
+            You can book your surf trip starting any day of the week.
+            We are fully flexible.
+          </p>
+        </div>
+      </aside>
+
+      <div class="contact-form-wrapper">
+        <h2 class="contact-form-title">
+          <i class="fa-regular fa-paper-plane"></i>&nbsp; Send us a message
+        </h2>
+        <form class="booking-form" (ngSubmit)="submitContact()" #contactForm="ngForm">
+          <div class="booking-form-row">
+            <div class="form-field">
+              <label for="firstName">First Name</label>
+              <input id="firstName" type="text" placeholder="First Name" name="firstName" [(ngModel)]="contact.firstName" required>
+            </div>
+            <div class="form-field">
+              <label for="lastName">Last Name</label>
+              <input id="lastName" type="text" placeholder="Last Name" name="lastName" [(ngModel)]="contact.lastName" required>
+            </div>
+          </div>
+
+          <div class="booking-form-row">
+            <div class="form-field">
+              <label for="email">Email</label>
+              <input id="email" type="email" placeholder="Email Address" name="email" [(ngModel)]="contact.email" required>
+            </div>
+            <div class="form-field">
+              <label for="subject">Subject</label>
+              <input id="subject" type="text" placeholder="Subject" name="subject" [(ngModel)]="contact.subject">
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="message">Message</label>
+            <textarea id="message" rows="5" placeholder="Write your message here..." name="message" [(ngModel)]="contact.message" required></textarea>
+          </div>
+
+          <button class="btn btn-primary" type="submit" [disabled]="isSubmitting || contactForm.invalid">
+            <i class="fa-solid fa-paper-plane"></i>&nbsp;
+            {{ isSubmitting ? 'Sending...' : 'Send Message' }}
+          </button>
+          <p class="booking-form-status" *ngIf="submitSuccess">{{ submitSuccess }}</p>
+          <p class="booking-form-status booking-form-status--error" *ngIf="submitError">{{ submitError }}</p>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+      <div class="contact-map-card">
+      <div class="contact-map-overlay">
+        <div class="contact-map-pin">
+          <i class="fa-solid fa-location-dot"></i>
+        </div>
+        <div>
+          <h3>Find us here</h3>
+          <p>Ait Soual Street, 80023 Tamraght, Morocco</p>
+          <a href="https://www.google.com/maps/place/ZAYA+SURF/@30.51082,-9.6856294,17z/data=!3m1!4b1!4m6!3m5!1s0xdb3b3efdf41eceb:0x33fa863c40409519!8m2!3d30.5108201!4d-9.6807585!16s%2Fg%2F11ms7fh7ng?entry=ttu&g_ep=EgoyMDI2MDIwNC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener" class="contact-map-link">
+            <i class="fa-solid fa-diamond-turn-right"></i>&nbsp; Open in Google Maps
+          </a>
+        </div>
+      </div>
+      <div class="contact-map-frame">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3437.3613403459162!2d-9.685629410132197!3d30.510820009437644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdb3b3efdf41eceb%3A0x33fa863c40409519!2sZAYA%20SURF!5e0!3m2!1sfr!2sfr!4v1770728256111!5m2!1sfr!2sfr" 
+        width="600" 
+        height="450" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+      </div>
+    </div>
+  </div>
+
+ 
+</section>
