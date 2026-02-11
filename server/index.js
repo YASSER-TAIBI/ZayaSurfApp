@@ -26,8 +26,8 @@ const sendBrevoEmail = async ({ subject, text, replyTo }) => {
     },
     body: JSON.stringify({
       sender: {
-        name: 'Zaya Surf Morocco',
-        email: process.env.SMTP_FROM || process.env.SMTP_USER || 'zayasurf@gmail.com'
+        name: process.env.BREVO_SENDER_NAME || 'Zaya Surf Morocco',
+        email: process.env.BREVO_SENDER_EMAIL
       },
       to: [{ email: process.env.BOOKING_TO_EMAIL }],
       replyTo: replyTo ? { email: replyTo } : undefined,
