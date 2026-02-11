@@ -12,15 +12,35 @@ const allowedOrigin = process.env.ALLOWED_ORIGIN || 'http://localhost:4200';
 app.use(cors({ origin: allowedOrigin }));
 app.use(express.json());
 
-const mailTransport = nodemailer.createTransport({
-  host: process.env.SMTP_HOST,
-  port: Number(process.env.SMTP_PORT || 587),
-  secure: process.env.SMTP_SECURE === 'true',
-  auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASS
+const sendBrevoEmail = async ({ subject, text, replyTo }) => {
+  const apiKey = process.env.BREVO_API_KEY;
+  if (!apiKey) {
+    throw new Error('Missing BREVO_API_KEY');
   }
-});
+
+  const response = await fetch('https://api.brevo.com/v3/smtp/email', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'api-key': apiKey
+    },
+    body: JSON.stringify({
+      sender: {
+        name: 'Zaya Surf Morocco',
+        email: process.env.SMTP_FROM || process.env.SMTP_USER || 'zayasurf@gmail.com'
+      },
+      to: [{ email: process.env.BOOKING_TO_EMAIL }],
+      replyTo: replyTo ? { email: replyTo } : undefined,
+      subject,
+      textContent: text
+    })
+  });
+
+  if (!response.ok) {
+    const errorBody = await response.text();
+    throw new Error(`Brevo API error: ${response.status} ${errorBody}`);
+  }
+};
 
 const buildBookingEmail = (payload) => {
   const lines = [
@@ -61,12 +81,10 @@ app.post('/api/contact', async (req, res) => {
   }
 
   try {
-    await mailTransport.sendMail({
-      from: process.env.SMTP_FROM || process.env.SMTP_USER,
-      to: process.env.BOOKING_TO_EMAIL,
-      replyTo: contact.email,
+    await sendBrevoEmail({
       subject: `Contact message - ${contact.firstName} ${contact.lastName}`,
-      text: buildContactEmail(contact)
+      text: buildContactEmail(contact),
+      replyTo: contact.email
     });
 
     res.json({ ok: true });
@@ -156,12 +174,10 @@ app.post('/api/booking', async (req, res) => {
   }
 
   try {
-    await mailTransport.sendMail({
-      from: process.env.SMTP_FROM || process.env.SMTP_USER,
-      to: process.env.BOOKING_TO_EMAIL,
-      replyTo: booking.email,
+    await sendBrevoEmail({
       subject: `New Booking Request - ${booking.firstName} ${booking.lastName}`,
-      text: buildBookingEmail(booking)
+      text: buildBookingEmail(booking),
+      replyTo: booking.email
     });
 
     res.json({ ok: true });
