@@ -71,6 +71,7 @@ app.post('/api/contact', async (req, res) => {
 
     res.json({ ok: true });
   } catch (error) {
+    console.error('Contact email send failed:', error);
     res.status(500).json({ error: 'Failed to send contact message' });
   }
 });
@@ -165,6 +166,7 @@ app.post('/api/booking', async (req, res) => {
 
     res.json({ ok: true });
   } catch (error) {
+    console.error('Booking email send failed:', error);
     res.status(500).json({ error: 'Failed to send booking email' });
   }
 });
